@@ -14,6 +14,7 @@
  * }
  */
 class Solution {
+    // Traverse
     int depth = 0;
     int ans = 0;
     public int maxDepth(TreeNode root) {
@@ -33,4 +34,15 @@ class Solution {
         traverse(root.right);
         depth--;
     }
+
+    // Recursion
+    
+    // public int maxDepth(TreeNode root) {
+    //     if(root == null) return 0;
+    //     int left = maxDepth(root.left);
+    //     int right = maxDepth(root.right); 
+
+    //     return Math.max(left, right) + 1;
+
+    // }
 }
