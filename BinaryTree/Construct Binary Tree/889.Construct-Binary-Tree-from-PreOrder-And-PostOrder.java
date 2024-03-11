@@ -29,24 +29,24 @@ class Solution {
     }
     // Solution two post to pre
 
-    public TreeNode build(int[] preorder, int[] postorder, int preStart, int preEnd, int postStart, int postEnd){
-        // pre:  N L R
-        // post: L R N  
-        if(postStart > postEnd) return null;
-        if(postStart == postEnd) return new TreeNode(postorder[postEnd]);
+    // public TreeNode build(int[] preorder, int[] postorder, int preStart, int preEnd, int postStart, int postEnd){
+    //     // pre:  N L R
+    //     // post: L R N  
+    //     if(postStart > postEnd) return null;
+    //     if(postStart == postEnd) return new TreeNode(postorder[postEnd]);
         
-        int rootValue = postorder[postEnd];
-        int rightValue = postorder[postEnd - 1];
+    //     int rootValue = postorder[postEnd];
+    //     int rightValue = postorder[postEnd - 1];
 
-        int rightRootIndex = map.get(rightValue);
+    //     int rightRootIndex = map.get(rightValue);
 
-        int leftSize = rightRootIndex - preStart - 1;
+    //     int leftSize = rightRootIndex - preStart - 1;
 
-        TreeNode root = new TreeNode(rootValue);        
-        root.left = build(preorder, postorder, preStart + 1, preStart + leftSize, postStart, postStart + leftSize - 1 );
-        root.right = build(preorder, postorder, preStart + leftSize + 1, preEnd, postStart + leftSize, postEnd - 1);
+    //     TreeNode root = new TreeNode(rootValue);        
+    //     root.left = build(preorder, postorder, preStart + 1, preStart + leftSize, postStart, postStart + leftSize - 1 );
+    //     root.right = build(preorder, postorder, preStart + leftSize + 1, preEnd, postStart + leftSize, postEnd - 1);
 
-        return root;
+    //     return root;
 
-    }
+    // }
 }
