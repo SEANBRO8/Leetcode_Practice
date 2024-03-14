@@ -1,3 +1,4 @@
+package LCA;
 /*
  * @lc app=leetcode id=1676 lang=java
  *
