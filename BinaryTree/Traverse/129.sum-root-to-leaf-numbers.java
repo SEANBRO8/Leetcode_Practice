@@ -1,13 +1,10 @@
 /*
- * @lc app=leetcode id=257 lang=java
+ * @lc app=leetcode id=129 lang=java
  *
- * [257] Binary Tree Paths
+ * [129] Sum Root to Leaf Numbers
  */
 
 // @lc code=start
-
-import java.util.List;
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -24,30 +21,29 @@ import java.util.List;
  * }
  */
 class Solution {
-    List<String> ans = new ArrayList<>();
-    List<String> path = new ArrayList<>();   
-    public List<String> binaryTreePaths(TreeNode root) {
+
+    int ans = 0;
+    StringBuilder num = new StringBuilder();
+
+    public int sumNumbers(TreeNode root) {
         traverse(root);
         return ans;
     }
 
     public void traverse(TreeNode root){
-
-        if(root == null){
-            return;
-        }
+        if(root == null) return;
 
         if(root.left == null && root.right == null){
-            path.add(root.val +"");
-            ans.add(String.join("->", path));
-            path.remove(path.size()-1);  
+            num.append(root.val);
+            ans += Integer.valueOf(String.valueOf(num));
+            num.deleteCharAt(num.length() - 1);
             return;
         }
 
-        path.add(root.val +"");
+        num.append(root.val);
         traverse(root.left);
-        traverse(root.right);  
-        path.remove(path.size()-1);      
+        traverse(root.right);
+        num.deleteCharAt(num.length() - 1);
 
     }
 }
