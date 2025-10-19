@@ -1,7 +1,21 @@
 {
+    // Quiet mode for LeetCode/labuladong workspace
+    "editor.inlineSuggest.enabled": false,
     "editor.quickSuggestions": {
         "other": false,
         "comments": false,
         "strings": false
-    }
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.snippetSuggestions": "none",
+    "editor.parameterHints.enabled": false,
+    // Hide labuladong/leetcode cache so you don't edit regenerated files
+    "files.exclude": {
+        "**/.lcpr": true
+    },
+    // Don't accept suggestions by pressing Enter accidentally
+    "editor.acceptSuggestionOnEnter": "off",
+    // Further reduce suggestion UI noise just in case
+    "editor.suggest.showWords": false,
+    "editor.suggest.showSnippets": false
 }

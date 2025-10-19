@@ -1,3 +1,4 @@
+import java.util.List;
 /*
  * @lc app=leetcode id=987 lang=java
  *
@@ -22,7 +23,10 @@
  */
 class Solution {
     public List<List<Integer>> verticalTraversal(TreeNode root) {
+                                
         
+
+
     }
 }
 // @lc code=end
