@@ -1,5 +1,4 @@
 package DataStructure.Hash;
-import java.util.*;
 
 public class LRU_DLH {
     
@@ -19,15 +18,16 @@ public class LRU_DLH {
      * 
      * 
      * 
+    /**
      * 
      */
-    HashMap<Integer, ListNode> map;
+    private HashMap<Integer, ListNode> map;
     int capacity;
     ListNode head;
     ListNode tail;
 
     public LRU_DLH(int capacity){
-        map = new HashMap<>();
+        this.map = new HashMap<>();
         this.capacity = capacity;
         head = new ListNode(-1, -1);
         tail = new ListNode(-1, -1);
@@ -36,9 +36,9 @@ public class LRU_DLH {
     }
 
      public int get(int key) {
-        if(map.containsKey(key)){
+        if(this.map.containsKey(key)){
             // make LRU
-            ListNode cur = map.get(key);
+            ListNode cur = this.map.get(key);
             remove(cur);
             addTohead(cur);
             return cur.val;
@@ -47,30 +47,30 @@ public class LRU_DLH {
     
     public void put(int key, int value) {
         // update value
-        if(map.containsKey(key)){   
+        if(this.map.containsKey(key)){   
             // make LRU
-            ListNode cur = map.get(key);
+            ListNode cur = this.map.get(key);
             remove(cur);
             cur.val = value;
             addTohead(cur);
         }else{
-            if(map.size() < capacity){
+            if(this.map.size() < capacity){
                 ListNode newCur = new ListNode(key, value);                
                 addToTail(newCur);
                 // make LRU
                 remove(newCur);
                 addTohead(newCur); 
-                map.put(key, newCur);               
+                this.map.put(key, newCur);               
             }else{
                 ListNode last = tail.prev;
                 remove(last);
-                map.remove(last.key);
+                this.map.remove(last.key);
                 
                 ListNode newCur = new ListNode(key, value);          
                 addToTail(newCur);        
                 remove(newCur);
                 addTohead(newCur);    
-                map.put(key, newCur);     
+                this.map.put(key, newCur);     
             }
         }
     }
@@ -97,10 +97,6 @@ public class LRU_DLH {
         cur.next.prev = cur.prev;
     }
 }
-
-
-
-
 
 class ListNode{
     int key;
