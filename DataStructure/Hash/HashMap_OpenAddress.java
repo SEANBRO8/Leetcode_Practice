@@ -1,12 +1,12 @@
 package DataStructure.Hash;
 
-public class HashMap {
+public class HashMap_OpenAddress {
     
     Pair[] map;
     int capacity;
     int size;
 
-    public HashMap(){
+    public HashMap_OpenAddress(){
         map = new Pair[2];
         this.size = 0;
         this.capacity = 2;

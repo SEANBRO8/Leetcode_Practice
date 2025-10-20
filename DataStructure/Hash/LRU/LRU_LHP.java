@@ -1,4 +1,4 @@
-package DataStructure.Hash;
+package DataStructure.Hash.LRU;
 import java.util.*;
 
 public class LRU_LHP {

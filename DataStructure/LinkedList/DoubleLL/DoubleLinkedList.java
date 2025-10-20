@@ -1,11 +1,11 @@
-package DataStructure.LinkedList;
+package DataStructure.LinkedList.DoubleLL;
 import java.util.*;
 
-class SinglyLinkedList {
+class DoubleLinkedList {
     ListNode head;
     ListNode tail;
     int size;
-    public SinglyLinkedList() {
+    public DoubleLinkedList() {
         this.head = new ListNode(-1);
         this.tail = new ListNode(-1);
         this.head.next = tail;
@@ -44,6 +44,27 @@ class SinglyLinkedList {
         size++;
     }
 
+    public void addAtIndex(int index, int val) {
+        if(index < 0 || index > size) return;
+        else if(index == 0) insertHead(val);
+        else if(index == size) insertTail(val);
+        else{
+            ListNode prev = this.head;
+            while(index > 0){
+                prev = prev.next;
+                index--;
+            }
+            ListNode next = prev.next;
+            ListNode cur = new ListNode(val);
+            prev.next = cur;
+            cur.prev = prev;
+            cur.next = next;
+            next.prev = cur;
+            size++;
+        }
+    }
+    
+
     public boolean remove(int index) {
        if (index < 0 || index >= this.size) return false;
         ListNode prev = this.head;
@@ -58,6 +79,8 @@ class SinglyLinkedList {
         return true;
     }
 
+
+
     public ArrayList<Integer> getValues() {
         ArrayList<Integer> res = new ArrayList<>();
         ListNode curr = this.head.next;
@@ -69,11 +92,12 @@ class SinglyLinkedList {
     }
 }
 
-class ListNode{
+class ListNode {
     int val;
     ListNode next;
     ListNode prev;
-    public ListNode(int val){
+    
+    ListNode(int val) {
         this.val = val;
         this.next = null;
         this.prev = null;

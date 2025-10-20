@@ -1,5 +1,5 @@
 package DataStructure.BinaryTree;
-import java.util.*;
+import java.util.HashMap;
 
 public class BST {
     
@@ -119,17 +119,12 @@ public class BST {
         return root;
     }
 
-
-}
-
-class TreeNode{
-    int val; 
-    TreeNode left;
-    TreeNode right;
-
-    public TreeNode(int val){
-        this.val = val;
-        this.left = null;
-        this.right = null;
+    public static class TreeNode {
+        int val;
+        TreeNode left, right;
+        public TreeNode(int val) {
+            this.val = val;
+        }
     }
+
 }
