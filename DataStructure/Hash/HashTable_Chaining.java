@@ -92,11 +92,12 @@ class HashTable_Chaining {
                 if(newTable[index] == null){
                     newTable[index] = newP;
                 }else{
-                    Pair head = newTable[index];
-                    while(head.next != null){
-                        head = head.next;
+                    Pair prev = null;
+                    prev.next = cur;
+                    while(prev.next != null){
+                        prev = prev.next;
                     }
-                    head.next = newP;
+                    prev.next = newP;
                 }
                 cur = cur.next;
             }
