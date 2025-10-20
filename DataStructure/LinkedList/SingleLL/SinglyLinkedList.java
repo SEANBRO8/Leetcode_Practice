@@ -1,4 +1,4 @@
-package DataStructure.LinkedList.SingleLL;
+package LinkedList.SingleLL;
 import java.util.*;
 
 public class SinglyLinkedList {

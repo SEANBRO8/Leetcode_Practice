@@ -1,4 +1,4 @@
-package DataStructure.LinkedList.DoubleLL;
+package LinkedList.DoubleLL;
 import java.util.*;
 
 class DoubleLinkedList {

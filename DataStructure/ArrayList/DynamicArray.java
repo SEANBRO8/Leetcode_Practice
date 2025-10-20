@@ -1,4 +1,4 @@
-package DataStructure.ArrayList;
+package ArrayList;
 
 public class DynamicArray {
     int[] list;

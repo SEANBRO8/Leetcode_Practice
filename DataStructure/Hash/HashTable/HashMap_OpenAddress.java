@@ -1,4 +1,4 @@
-package DataStructure.Hash;
+package Hash.HashTable;
 
 public class HashMap_OpenAddress {
     
@@ -91,12 +91,13 @@ public class HashMap_OpenAddress {
 }
 
 class Pair{
-    String key;
-    String val;
+        String key;
+        String val;
 
-    public Pair(String key, String value){
-        this.key = key;
-        this.val = value;
-    }
-
+        public Pair(String key, String value){
+            this.key = key;
+            this.val = value;
+        }
 }
+
+

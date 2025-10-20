@@ -1,4 +1,4 @@
-package DataStructure.Hash.LRU;
+package Hash.LRU;
 import java.util.HashMap;
 
 public class LRU_DLH {
@@ -97,19 +97,20 @@ public class LRU_DLH {
         cur.prev.next = cur.next;
         cur.next.prev = cur.prev;
     }
-}
 
 class ListNode{
-    int key;
-    int val;
-    ListNode prev; 
-    ListNode next;
+        int key;
+        int val;
+        ListNode prev; 
+        ListNode next;
 
-    public ListNode(int key, int val){
-        this.key = key;
-        this.val = val;
-        prev = null;
-        next = null;
+        public ListNode(int key, int val){
+            this.key = key;
+            this.val = val;
+            prev = null;
+            next = null;
+        }
     }
-
 }
+
+

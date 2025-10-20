@@ -17,5 +17,11 @@
     "editor.acceptSuggestionOnEnter": "off",
     // Further reduce suggestion UI noise just in case
     "editor.suggest.showWords": false,
-    "editor.suggest.showSnippets": false
+    "editor.suggest.showSnippets": false,
+    "java.project.sourcePaths": [
+        "Sorting",
+        "DataStructure"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.referencedLibraries": []
 }

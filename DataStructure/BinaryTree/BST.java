@@ -1,4 +1,4 @@
-package DataStructure.BinaryTree;
+package BinaryTree;
 import java.util.HashMap;
 
 public class BST {

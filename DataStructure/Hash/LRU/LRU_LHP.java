@@ -1,5 +1,5 @@
-package DataStructure.Hash.LRU;
-import java.util.*;
+package Hash.LRU;
+import java.util.LinkedHashMap;
 
 public class LRU_LHP {
     // linked HashMap 

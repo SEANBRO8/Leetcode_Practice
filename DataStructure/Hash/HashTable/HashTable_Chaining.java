@@ -1,13 +1,13 @@
-package DataStructure.Hash;
+package Hash.HashTable;
 
 class HashTable_Chaining {
     int size; 
     int capacity;
-    Pair[] table;
+    Pair1[] table;
     public HashTable_Chaining(int capacity) {
         this.capacity = capacity;
         this.size = 0;
-        this.table = new Pair[capacity];
+        this.table = new Pair1[capacity];
     }
 
     public int hash(int key){
@@ -16,9 +16,9 @@ class HashTable_Chaining {
 
     public void insert(int key, int value) {
         int index = hash(key);
-        Pair newP = new Pair(key, value);
-        Pair cur = table[index];
-        Pair prev = null;
+        Pair1 newP = new Pair1(key, value);
+        Pair1 cur = table[index];
+        Pair1 prev = null;
         
         if(table[index] == null){
             table[index] = newP;
@@ -41,7 +41,7 @@ class HashTable_Chaining {
 
     public int get(int key) {
         int index = hash(key);
-        Pair cur = table[index];
+        Pair1 cur = table[index];
 
         if(cur == null) return -1;        
 
@@ -54,8 +54,8 @@ class HashTable_Chaining {
 
     public boolean remove(int key) {
         int index = hash(key);
-        Pair cur = table[index];
-        Pair prev = null;
+        Pair1 cur = table[index];
+        Pair1 prev = null;
         if(cur == null) return false;
         while(cur != null){
             if(cur.key == key){
@@ -80,19 +80,19 @@ class HashTable_Chaining {
 
     public void resize() {
         int newCapacity = this.capacity * 2;
-        Pair[] newTable = new Pair[newCapacity];
+        Pair1[] newTable = new Pair1[newCapacity];
 
-        for(Pair pair : table){
-            Pair cur = pair;
+        for(Pair1 pair : table){
+            Pair1 cur = pair;
             while(cur != null){
                 int key = cur.key;
-                Pair newP = new Pair(cur.key, cur.val);
+                Pair1 newP = new Pair1(cur.key, cur.val);
                 int index = key % newCapacity;
                 
                 if(newTable[index] == null){
                     newTable[index] = newP;
                 }else{
-                    Pair prev = null;
+                    Pair1 prev = null;
                     prev.next = cur;
                     while(prev.next != null){
                         prev = prev.next;
@@ -105,18 +105,18 @@ class HashTable_Chaining {
         this.capacity = newCapacity;
         this.table = newTable;
     }
+}
 
-    private static class Pair{
+class Pair1{
         int key;
         int val;
-        Pair next;
+        Pair1 next;
 
-        private Pair(int key, int val){
+        public Pair1(int key, int val){
             this.key = key;
             this.val = val;
             this.next = null;
         }
-    }
 }
 
 

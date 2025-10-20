@@ -1,4 +1,4 @@
-package DataStructure.LinkedList;
+package LinkedList.Deque_ListNode;
 
 public class Deque {
     ListNode head;

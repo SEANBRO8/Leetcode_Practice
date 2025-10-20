@@ -1,4 +1,4 @@
-package DataStructure.MaxAndMinHeap;
+package MaxAndMinHeap;
 import java.util.*;
 
 public class MaxHeap {
