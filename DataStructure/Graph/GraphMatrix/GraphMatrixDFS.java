@@ -13,7 +13,7 @@ public class GraphMatrixDFS {
         int m = grid.length, n = grid[0].length;
         if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j] == true) return;
         
-         visited[i][j] = true;
+        visited[i][j] = true;
 
         for(int p = 0; p < 4; p++){
             dfs(grid, p + directions[p][0], p + directions[p][1], visited);
