@@ -23,7 +23,7 @@ public class CountingSort {
             if(min > num) min = num;
             if(max < num) max = num;
         }
-        // in case the offset
+        // in case the offset,consider index Zero
         int range = max - min + 1;
         int[] counts = new int[range];
         for(int num : arr) counts[num - min]++;

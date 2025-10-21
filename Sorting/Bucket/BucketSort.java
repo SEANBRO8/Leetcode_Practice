@@ -4,15 +4,15 @@ import java.util.*;
 public class BucketSort {
     public static void main(String[] args){
         double[] arr = new double[]{5.0, -2.0, 4.0, 6.0, 1.0, 3.0, 7.0, 0.0, -1.0, -5.0, 10.0, 100.0, 77.0};
-        bucketSort(arr, 13);
+        bucketSort(arr);
 
         for (double n : arr) {
             System.out.print(n + " ");
         }
     }
 
-    public static void bucketSort(double[] arr, int n){
-        if (arr == null || arr.length <= 1 || n <= 0) return;
+    public static void bucketSort(double[] arr){
+        if (arr == null || arr.length <= 1) return;
 
         double max = Double.MIN_VALUE, min = Double.MAX_VALUE;
         for(double num : arr){
@@ -23,7 +23,7 @@ public class BucketSort {
         double range = max - min;
         if(range == 0) return;
 
-
+        int n = (int)Math.sqrt(arr.length);
         List<List<Double>> bucket = new ArrayList<>();
         for(int i = 0; i < n; i++){
             bucket.add(new ArrayList<>());
