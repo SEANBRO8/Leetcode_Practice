@@ -20,7 +20,7 @@
     "editor.suggest.showSnippets": false,
     "java.project.sourcePaths": [
         "Sorting",
-        "DataStructure"
+        "DataStructure""AdvancedAlgorithms"
     ],
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.referencedLibraries": []
