@@ -1,4 +1,4 @@
-package Trie;
+package Tree;
 import java.util.*;
 
 public class Trie {
