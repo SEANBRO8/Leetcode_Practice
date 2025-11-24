@@ -18,7 +18,7 @@ public class Stack {
     }
 
     public Deque<Integer> monotonicAdd(int[] nums){
-        Deque<Character> st = new ArrayDeque<>();
+        Deque<Integer> st = new ArrayDeque<>();
 
         while (!st.isEmpty() && nums[st.peek()] < nums[i]) {
             st.pop(); // 越小的都被更大的"淘汰"
@@ -29,7 +29,7 @@ public class Stack {
 
 
     public Deque<Integer> monotonicMinus(int[] nums){
-        Deque<Character> st = new ArrayDeque<>();
+        Deque<Integer> st = new ArrayDeque<>();
         
         while (!st.isEmpty() && nums[st.peek()] > nums[i]) {
             st.pop(); // 越小的都被更大的"淘汰"
