@@ -4,6 +4,7 @@ import java.util.*;
 public class Dijkstra {
     
     public Map<Integer, Integer> shortestPath(int[][] edges, int n, int start){
+        // TC: e * logN SC: n + e 
         Map<Integer, List<int[]>> graph = new HashMap<>();
         
         for(int i = 0; i < n; i++){
@@ -16,14 +17,11 @@ public class Dijkstra {
         }
         Map<Integer, Integer> map = new HashMap<>();
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a,b)->a[1] - b[1]);
-
         minHeap.offer(new int[]{start, 0});
 
         while(!minHeap.isEmpty()){
             int[] cur = minHeap.poll();
-
             int to = cur[0], cost = cur[1];
-
             if(map.containsKey(to)) continue;
             map.put(to, cost);
 
