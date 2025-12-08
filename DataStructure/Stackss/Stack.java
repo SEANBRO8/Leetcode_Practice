@@ -17,7 +17,7 @@ public class Stack {
         return st.isEmpty();
     }
 
-    public Deque<Integer> monotonicAdd(int[] nums, int i){
+    public Deque<Integer> monotonicDecrease(int[] nums, int i){
         Deque<Integer> st = new ArrayDeque<>();
 
         while (!st.isEmpty() && nums[st.peek()] < nums[i]) {
@@ -28,7 +28,7 @@ public class Stack {
     }
 
 
-    public Deque<Integer> monotonicMinus(int[] nums, int i){
+    public Deque<Integer> monotonicIncrease(int[] nums, int i){
         Deque<Integer> st = new ArrayDeque<>();
         
         while (!st.isEmpty() && nums[st.peek()] > nums[i]) {
